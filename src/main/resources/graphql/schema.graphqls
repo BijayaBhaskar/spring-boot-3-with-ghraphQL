@@ -1,0 +1,26 @@
+type Student {
+    id:ID!
+    name:String
+    className:String
+    section:String
+    cTName:String
+}
+
+scalar Long
+
+type Query{
+    getAll: [Student]
+    getStudentById(studentId:Long):Student
+}
+
+type Mutation{
+createStudent(student: StudentInput):Student
+}
+
+input StudentInput{
+    name:String
+    className:String
+    section: String
+    cTName: String
+
+}
